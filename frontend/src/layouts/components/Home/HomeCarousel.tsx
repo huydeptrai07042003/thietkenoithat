@@ -46,10 +46,13 @@ const HomeCarousel: React.FC = () => {
         speed={2500}
         loop={newArrival.length > 3}
       >
-        {newArrival.map((item, index) => {
+        {newArrival.map((item) => {
           return (
-            <SwiperSlide key={index}>
-              <Button className="group cursor-pointer rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center">
+            <SwiperSlide key={item._id}>
+              <Button
+                to={`/products/${item._id}`}
+                className="group cursor-pointer text-center rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center"
+              >
                 <CardCarousel item={item} />
               </Button>
             </SwiperSlide>
