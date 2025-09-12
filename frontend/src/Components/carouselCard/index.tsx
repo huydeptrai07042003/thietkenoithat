@@ -6,7 +6,7 @@ interface IMG {
 }
 
 export interface Item {
-  _id: number;
+  _id: string; 
   images: IMG[];
   place: string;
   acreage: number;
