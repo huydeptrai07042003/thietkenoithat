@@ -4,9 +4,22 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductDetail, updateProduct } from '../../../redux/slices/productSlice';
 import axios from 'axios';
 
-interface ImageType {
+export interface ImageType {
   url: string;
-  altText: string;
+  altText?: string; // optional
+}
+
+export interface Product {
+  _id: string;       // MongoDB ObjectId → string
+  name: string;
+  type: string;
+  place: string;
+  interiorBudget: number;
+  roughBudget: number;
+  acreage: number;
+  status: string;
+  images: ImageType[];
+  user?: string;     // _id của admin
 }
 
 interface ProductForm {

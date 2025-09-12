@@ -1,17 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-interface Product {
-  _id: string;
+export interface ImageType {
+  url: string;
+  altText?: string; // optional
+}
+
+export interface Product {
+  _id: string;       // MongoDB ObjectId → string
   name: string;
   type: string;
-  place?: string;
-  // Các field bổ sung
-  interiorBudget?: number;
-  roughBudget?: number;
-  acreage?: number;
-  status?: string;
-  images?: string[];
+  place: string;
+  interiorBudget: number;
+  roughBudget: number;
+  acreage: number;
+  status: string;
+  images: ImageType[];
+  user?: string;     // _id của admin
 }
 
 interface PROPS {
