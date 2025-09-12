@@ -51,7 +51,7 @@ const HomeCarousel: React.FC = () => {
             <SwiperSlide key={item._id}>
               <Button
                 to={`/products/${item._id}`}
-                className="group cursor-pointer text-center rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center"
+                className="group cursor-pointer text-center block w-fit p-0 rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center"
               >
                 <CardCarousel item={item} />
               </Button>
