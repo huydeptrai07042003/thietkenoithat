@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+body {
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: rgba(165, 132, 104);
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* căn ngang */
+  align-items: center; /* căn dọc */
+}
+
+.bgBlue {
+  background-color: rgba(40, 44, 59);
+}
+.bgBlue1 {
+  background-color: rgba(40, 44, 59,0.8);
+}
+
+.bgBrown {
+  background-color: rgba(165, 132, 104);
+}
