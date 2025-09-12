@@ -1,13 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
-
 interface Product {
   _id: string;
   name: string;
   type: string;
   place?: string;
+  // Các field bổ sung
+  interiorBudget?: number;
+  roughBudget?: number;
+  acreage?: number;
+  status?: string;
+  images?: string[];
 }
 
 interface PROPS {
