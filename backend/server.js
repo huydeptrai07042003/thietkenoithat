@@ -7,8 +7,6 @@ const productRoute = require("./routes/productRoutes");
 const uploadRoute = require("./routes/uploadRoute");
 const adminRoutes = require("./routes/adminRoutes");
 
-
-
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -16,9 +14,6 @@ app.use(cors());
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
-
-//connect to DB
-connectDB();
 
 app.get("/", (req, res) => {
   res.send("Welcome to home");
@@ -32,7 +27,9 @@ app.use("/api/upload", uploadRoute);
 //Admin
 app.use("/api/admin/users", adminRoutes);
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+//connect to DB
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
 });
