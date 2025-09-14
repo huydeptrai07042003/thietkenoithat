@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { deleteProduct, fetchAdminProducts } from '../../../redux/slices/adminProductSlice';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../../Components/button';
+import DialogCreateProduct from './DialogCreateProduct';
 
 const AdminProducts: React.FC = () => {
+  //Open create Product
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  //
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { products, loading, error } = useAppSelector((state) => state.adminProduct);
@@ -74,10 +78,12 @@ const AdminProducts: React.FC = () => {
         </table>
       </div>
       <Button
+        onClick={() => setIsOpen(true)}
         className="p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
       >
-      Thêm sản phẩm
+        Thêm sản phẩm
       </Button>
+      <DialogCreateProduct status={isOpen} setStatus={setIsOpen} />
     </div>
   );
 };

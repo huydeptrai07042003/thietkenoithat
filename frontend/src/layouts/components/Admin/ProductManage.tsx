@@ -164,9 +164,10 @@ const ProductManage: React.FC = () => {
         <div>
           <label className="block mb-1">Status</label>
           <select name="status" value={formData.status} onChange={handleChange} className="w-full border p-2 rounded">
-            <option value="">Select Status</option>
-            <option value="available">Available</option>
-            <option value="sold">Sold</option>
+            <option className='text-black' value="" hidden>Trạng thái</option>
+            <option className='text-black' value="Căn hộ cũ cải tạo lại">Căn hộ cũ cải tạo lại</option>
+            <option className='text-black' value="Hoàn thiện cơ bản">Hoàn thiện cơ bản</option>
+            <option className='text-black' value="Nhận bàn giao thô">Nhận bàn giao thô</option>  
           </select>
         </div>
 

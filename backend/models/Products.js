@@ -19,19 +19,15 @@ const productSchema = new mongoose.Schema(
     },
     interiorBudget: {
       type: Number,
-      required: true,
     },
     roughBudget: {
       type: Number,
-      required: true,
     },
     acreage: {
       type: Number,
-      required: true,
     },
     status: {
       type: String,
-      required: true,
     },
     images: [
       {
