@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductDetail, updateProduct } from '../../../redux/slices/productSlice';
 import axios from 'axios';
+import clsx from 'clsx';
 
 export interface ImageType {
   url: string;
@@ -164,10 +165,18 @@ const ProductManage: React.FC = () => {
         <div>
           <label className="block mb-1">Status</label>
           <select name="status" value={formData.status} onChange={handleChange} className="w-full border p-2 rounded">
-            <option className='text-black' value="" hidden>Trạng thái</option>
-            <option className='text-black' value="Căn hộ cũ cải tạo lại">Căn hộ cũ cải tạo lại</option>
-            <option className='text-black' value="Hoàn thiện cơ bản">Hoàn thiện cơ bản</option>
-            <option className='text-black' value="Nhận bàn giao thô">Nhận bàn giao thô</option>  
+            <option className="text-black" value="" hidden>
+              Trạng thái
+            </option>
+            <option className="text-black" value="Căn hộ cũ cải tạo lại">
+              Căn hộ cũ cải tạo lại
+            </option>
+            <option className="text-black" value="Hoàn thiện cơ bản">
+              Hoàn thiện cơ bản
+            </option>
+            <option className="text-black" value="Nhận bàn giao thô">
+              Nhận bàn giao thô
+            </option>
           </select>
         </div>
 
@@ -192,8 +201,15 @@ const ProductManage: React.FC = () => {
           </div>
         </div>
 
-        <button type="submit" className="w-full bg-green-500 text-white p-2 rounded">
-          Update Product
+        <button
+          type="submit"
+          disabled={uploading}
+          className={clsx(
+            'w-full cursor-pointer text-white p-2 rounded',
+            uploading ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-500',
+          )}
+        >
+          {uploading ? 'Uploading...' : 'Update Product'}
         </button>
       </form>
     </div>
