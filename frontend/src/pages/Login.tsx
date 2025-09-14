@@ -12,8 +12,16 @@ const Login: React.FC = () => {
   const dispatch = useAppDispatch();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await dispatch(loginUser({ email, password })).unwrap();
-    navigate('/admin')
+    try {
+      const user = await dispatch(loginUser({ email, password })).unwrap();
+      if (user.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/user');
+      }
+    } catch (error) {
+      alert(error || 'Đăng nhập thất bại, vui lòng thử lại!');
+    }
   };
 
   return (
@@ -22,8 +30,8 @@ const Login: React.FC = () => {
         <h1 className="text-lg font-semibold uppercase text-center">Đăng nhập</h1>
         <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-y-2">
           {/* Input */}
-          <Input title="Email" placeholder="Email của bạn" value={email} setValue={setEmail} />
-          <Input title="Mật khẩu" placeholder="Mật khẩu của bạn" value={password} setValue={setPassword} />
+          <Input title="Email" placeholder="Email của bạn" type='gmail' value={email} setValue={setEmail} />
+          <Input title="Mật khẩu" placeholder="Mật khẩu của bạn" type='password' value={password} setValue={setPassword} />
           <Button
             type="submit"
             className="p-2 mt-6 bg-red-300 text-black rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"

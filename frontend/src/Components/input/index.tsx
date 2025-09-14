@@ -7,15 +7,17 @@ interface InputProps {
   placeholder: string;
   value: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
+  type?: string;
 }
 
 const Input = (props: InputProps) => {
-  const { title, placeholder, value, setValue } = props;
+  const { title, placeholder, value, setValue, type } = props;
   const inputRef = useRef<HTMLInputElement | null>(null);
   return (
     <div className="flex flex-col gap-2 relative">
       <label className="ms-2">{title}</label>
       <input
+        type={type}
         ref={inputRef}
         value={value}
         className="px-10 py-2 border-0 rounded-lg text-black overflow-hidden bg-white"

@@ -46,6 +46,46 @@ const initialState: INITIALSTATE = {
   error: null,
 };
 
+// Async Thunk for User Login
+export const loginUser = createAsyncThunk<
+  USER,
+  { email: string; password: string },
+  { rejectValue: { message: string } }
+>('auth/loginUser', async (userData, { rejectWithValue }) => {
+  try {
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/login`, userData);
+    localStorage.setItem('userInfo', JSON.stringify(response.data.user));
+    localStorage.setItem('userToken', response.data.token);
+    return response.data.user;
+  } catch (error: unknown) {
+    const axiosError = error as AxiosError<RegisterError>;
+    if (axiosError.response && axiosError.response.data) {
+      return rejectWithValue(axiosError.response.data);
+    }
+    return rejectWithValue({ message: 'Unknown error occurred' });
+  }
+});
+
+// Async Thunk for User Register
+export const registerUser = createAsyncThunk<
+  USER,
+  { name: string; email: string; password: string },
+  { rejectValue: { message: string } }
+>('auth/registerUser', async (userData, { rejectWithValue }) => {
+  try {
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/register`, userData);
+    localStorage.setItem('userInfo', JSON.stringify(response.data.user));
+    localStorage.setItem('userToken', response.data.token);
+    return response.data.user;
+  } catch (error: unknown) {
+    const axiosError = error as AxiosError<RegisterError>;
+    if (axiosError.response && axiosError.response.data) {
+      return rejectWithValue(axiosError.response.data);
+    }
+    return rejectWithValue({ message: 'Unknown error occurred' });
+  }
+});
+
 //Slice
 export const authSlice = createSlice({
   name: 'auth',
@@ -94,43 +134,3 @@ export const authSlice = createSlice({
 
 export const { logout, generrateNewGuestId } = authSlice.actions;
 export default authSlice.reducer;
-
-// Async Thunk for User Login
-export const loginUser = createAsyncThunk<
-  USER,
-  { email: string; password: string },
-  { rejectValue: { message: string } }
->('auth/loginUser', async (userData, { rejectWithValue }) => {
-  try {
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/login`, userData);
-    localStorage.setItem('userInfo', JSON.stringify(response.data.user));
-    localStorage.setItem('userToken', response.data.token);
-    return response.data.user;
-  } catch (error: unknown) {
-    const axiosError = error as AxiosError<RegisterError>;
-    if (axiosError.response && axiosError.response.data) {
-      return rejectWithValue(axiosError.response.data);
-    }
-    return rejectWithValue({ message: 'Unknown error occurred' });
-  }
-});
-
-// Async Thunk for User Register
-export const registerUser = createAsyncThunk<
-  USER,
-  { name: string; email: string; password: string },
-  { rejectValue: { message: string } }
->('auth/registerUser', async (userData, { rejectWithValue }) => {
-  try {
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/register`, userData);
-    localStorage.setItem('userInfo', JSON.stringify(response.data.user));
-    localStorage.setItem('userToken', response.data.token);
-    return response.data.user;
-  } catch (error: unknown) {
-    const axiosError = error as AxiosError<RegisterError>;
-    if (axiosError.response && axiosError.response.data) {
-      return rejectWithValue(axiosError.response.data);
-    }
-    return rejectWithValue({ message: 'Unknown error occurred' });
-  }
-});

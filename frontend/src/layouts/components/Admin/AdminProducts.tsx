@@ -23,7 +23,7 @@ const AdminProducts: React.FC = () => {
 
   const handleEdit = (id: string) => {
     console.log('Edit product with id:', id);
-    navigate(`/admin/products/${id}`)
+    navigate(`/admin/products/${id}`);
   };
 
   return (
@@ -73,6 +73,11 @@ const AdminProducts: React.FC = () => {
           </tbody>
         </table>
       </div>
+      <Button
+        className="p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+      >
+      Thêm sản phẩm
+      </Button>
     </div>
   );
 };

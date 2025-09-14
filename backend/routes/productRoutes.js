@@ -4,7 +4,7 @@ const { protect, admin } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// route POST /api/products
+// route POST /api/admin/products
 router.post("/", protect, admin, async (req, res) => {
   try {
     const {
@@ -38,7 +38,7 @@ router.post("/", protect, admin, async (req, res) => {
   }
 });
 
-//route PUT /api/products/:id
+//route PUT /api/admin/products/:id
 router.put("/:id", protect, admin, async (req, res) => {
   try {
     const {
@@ -75,7 +75,7 @@ router.put("/:id", protect, admin, async (req, res) => {
   }
 });
 
-//route DELETE /api/products/:id
+//route DELETE /api/admin/products/:id
 router.delete("/:id", protect, admin, async (req, res) => {
   try {
     // Find product by ID
