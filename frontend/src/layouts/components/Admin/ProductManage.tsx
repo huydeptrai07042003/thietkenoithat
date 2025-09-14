@@ -10,7 +10,7 @@ export interface ImageType {
 }
 
 export interface Product {
-  _id: string;       // MongoDB ObjectId → string
+  _id: string; // MongoDB ObjectId → string
   name: string;
   type: string;
   place: string;
@@ -19,7 +19,7 @@ export interface Product {
   acreage: number;
   status: string;
   images: ImageType[];
-  user?: string;     // _id của admin
+  user?: string; // _id của admin
 }
 
 interface ProductForm {
@@ -132,7 +132,7 @@ const ProductManage: React.FC = () => {
   if (error) return <p>ERROR: {error}</p>;
 
   return (
-    <div className="max-w-xl mx-auto p-10 mt-20 bgBlue text-white rounded-md">
+    <div className="max-w-xl mx-auto p-10 mt-20 bgBlue text-white rounded-md ">
       <h2 className="text-2xl font-bold mb-4">Manage Product</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {(['name', 'type', 'place'] as (keyof ProductForm)[]).map((field) => (

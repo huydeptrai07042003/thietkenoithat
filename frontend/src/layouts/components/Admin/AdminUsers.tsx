@@ -45,10 +45,16 @@ const AdminUsers: React.FC = () => {
   };
 
   return (
-    <div className="p-8 max-w-3xl mx-auto mt-15">
-      {/* Tiêu đề */}
-      <h1 className="text-2xl font-bold mb-8 text-center">User Management</h1>
-
+    <div className="p-8 max-w-3xl mx-auto mt-15 relative">
+      {/* Header */}
+      <h1 className="text-2xl font-bold mb-8 sm:text-center">User Management</h1>
+      {/* Button Get Back */}
+      <Button
+        to="/admin"
+        className="absolute top-0 right-1 p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+      >
+        Back to Admin
+      </Button>
       {/* Form thêm user */}
       <div className="bgBlue p-6 rounded-lg shadow-md mb-10 text-white">
         <h2 className="text-lg font-semibold mb-4">Add New User</h2>

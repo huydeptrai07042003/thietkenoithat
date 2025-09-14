@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { deleteProduct, fetchAdminProducts } from '../../../redux/slices/adminProductSlice';
 import { useNavigate } from 'react-router-dom';
+import Button from '../../../Components/button';
 
 const AdminProducts: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -26,10 +27,16 @@ const AdminProducts: React.FC = () => {
   };
 
   return (
-    <div className="p-8 max-w-4xl mx-auto mt-15">
+    <div className="p-8 max-w-4xl mx-auto mt-15 relative">
       {/* Tiêu đề */}
-      <h1 className="text-2xl font-bold mb-6 text-center">Product Management</h1>
-
+      <h1 className="text-2xl font-bold mb-6 sm:text-center">Product Management</h1>
+      {/* Button Get Back */}
+      <Button
+        to="/admin"
+        className="absolute top-0 right-1 p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+      >
+        Back to Admin
+      </Button>
       {/* Bảng quản lý sản phẩm */}
       <div className="w-full overflow-x-auto">
         <table className="min-w-full border-collapse rounded-lg shadow-md">

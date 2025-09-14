@@ -1,6 +1,7 @@
 import React from 'react';
-import { Home, Introduction, Projects, Login, SignUp, SingleProject, Admin } from '../pages';
+import { Home, Introduction, Projects, Login, SignUp, SingleProject, Admin, User } from '../pages';
 import HeaderLayout from '../layouts/headerOnly';
+//Admin Page
 import AdminProducts from '../layouts/components/Admin/AdminProducts';
 import AdminUsers from '../layouts/components/Admin/AdminUsers';
 import ProductManage from '../layouts/components/Admin/ProductManage';
@@ -20,6 +21,7 @@ const publicRouter: Router[] = [
   { path: '/products', component: Projects },
   { path: '/login', component: Login, layout: HeaderLayout },
   { path: '/signup', component: SignUp, layout: HeaderLayout },
+  { path: '/user', component: User, layout: HeaderLayout },
 ];
 
 //Private Router
