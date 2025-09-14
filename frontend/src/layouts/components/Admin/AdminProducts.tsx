@@ -33,11 +33,11 @@ const AdminProducts: React.FC = () => {
   return (
     <div className="p-8 max-w-4xl mx-auto mt-15 relative">
       {/* Tiêu đề */}
-      <h1 className="text-2xl font-bold mb-6 sm:text-center">Product Management</h1>
+      <h1 className="text-2xl font-bold md:mb-6 text-center">Product Management</h1>
       {/* Button Get Back */}
       <Button
         to="/admin"
-        className="absolute top-0 right-1 p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
+        className="md:absolute  md:top-0 md:right-1 inline-block my-2 p-2 mt-6 bgBlue text-white rounded-lg hover:opacity-50 transition-opacity duration-300 cursor-pointer"
       >
         Back to Admin
       </Button>
