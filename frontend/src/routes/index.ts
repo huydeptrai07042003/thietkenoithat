@@ -5,6 +5,7 @@ import HeaderLayout from '../layouts/headerOnly';
 import AdminProducts from '../layouts/components/Admin/AdminProducts';
 import AdminUsers from '../layouts/components/Admin/AdminUsers';
 import ProductManage from '../layouts/components/Admin/ProductManage';
+import FeedbacksMornitoring from '../layouts/components/Admin/FeedbacksMornitoring';
 
 interface Router {
   path: string;
@@ -27,6 +28,7 @@ const publicRouter: Router[] = [
 
 //Private Router
 const privateRouter: Router[] = [
+  { path: '/admin/feedbacks', component: FeedbacksMornitoring, role: 'admin', layout: HeaderLayout },
   { path: '/admin/users', component: AdminUsers, role: 'admin', layout: HeaderLayout },
   { path: '/admin/products', component: AdminProducts, role: 'admin', layout: HeaderLayout },
   { path: '/admin/products/:id', component: ProductManage, role: 'admin', layout: HeaderLayout },

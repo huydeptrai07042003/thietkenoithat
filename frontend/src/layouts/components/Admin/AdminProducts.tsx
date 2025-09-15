@@ -61,13 +61,13 @@ const AdminProducts: React.FC = () => {
                 <td className="px-4 py-2 text-center flex gap-2 justify-center">
                   <button
                     onClick={() => handleEdit(product._id)}
-                    className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500 transition"
+                    className="bg-yellow-400 text-white px-4 py-1 rounded hover:bg-yellow-500 transition cursor-pointer"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(product._id)}
-                    className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition"
+                    className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600 transition cursor-pointer"
                   >
                     Delete
                   </button>

@@ -25,6 +25,13 @@ const Admin: React.FC = () => {
         >
           Users Monitoring
         </Button>
+        {/* Nút Feedbacks */}
+        <Button
+          to="/admin/feedbacks"
+          className="px-8 py-4 text-lg font-semibold rounded-2xl bg-blue-500 text-white shadow-lg hover:bg-green-600 hover:scale-105 transform transition duration-300 ease-in-out"
+        >
+          Feedbacks Monitoring
+        </Button>
         {/* Nút Products */}
         <Button
           to="/admin/products"
@@ -32,8 +39,7 @@ const Admin: React.FC = () => {
         >
           Products Monitoring
         </Button>
-
-        {/* Nút Products */}
+        {/* Nút Log out */}
         <Button
           onClick={handleLogOut}
           className="px-8 py-4 text-lg font-semibold rounded-2xl bg-blue-500 text-white shadow-lg hover:bg-green-600 hover:scale-105 transform transition duration-300 ease-in-out"

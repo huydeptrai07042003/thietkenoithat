@@ -39,6 +39,7 @@ const DialogFeedback: React.FC<Props> = (props) => {
       rating: 0,
       desc: '',
     });
+    setIsOpen(false);
   };
   return (
     <Dialog open={isOpen} onClose={() => handleFormAfterOut()} className="relative z-50">
