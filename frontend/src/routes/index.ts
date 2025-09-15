@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Introduction, Projects, Login, SignUp, SingleProject, Admin, User } from '../pages';
+import { Home, Introduction, Projects, Login, SignUp, SingleProject, Admin, User, Feedbacks } from '../pages';
 import HeaderLayout from '../layouts/headerOnly';
 //Admin Page
 import AdminProducts from '../layouts/components/Admin/AdminProducts';
@@ -22,6 +22,7 @@ const publicRouter: Router[] = [
   { path: '/login', component: Login, layout: HeaderLayout },
   { path: '/signup', component: SignUp, layout: HeaderLayout },
   { path: '/user', component: User, layout: HeaderLayout },
+  { path: '/feedbacks', component: Feedbacks, layout: HeaderLayout },
 ];
 
 //Private Router

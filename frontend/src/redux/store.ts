@@ -3,6 +3,7 @@ import authReducer from './slices/authSlice';
 import productReducer from './slices/productSlice';
 import adminReducer from './slices/adminSlice';
 import adminProductReducer from './slices/adminProductSlice';
+import feedbackReducer from './slices/feedbackSlice';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     products: productReducer,
     admin: adminReducer,
     adminProduct: adminProductReducer,
+    feedbacks: feedbackReducer,
   },
 });
 

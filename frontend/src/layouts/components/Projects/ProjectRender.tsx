@@ -41,13 +41,21 @@ const ProjectRender: React.FC = () => {
                 {/* Thông tin dự án */}
                 <div className="absolute top-[40%] text-xl left-[-100%] text-white w-full opacity-0 h-full transition-all duration-300 group-hover:left-0 group-hover:opacity-100">
                   <p>
-                    <span className="font-bold">Địa điểm:</span> {item.place}
+                    <span className="font-bold">Địa điểm:</span>{' '}
+                    {item.place === 'hochiminh'
+                      ? 'Hồ Chí Minh'
+                      : item.place === 'hanoi'
+                      ? 'Hà Nội'
+                      : item.place === 'phutho'
+                      ? 'Phú Thọ'
+                      : item.place}
                   </p>
                   <p>
                     <span className="font-bold">Diện tích:</span> {item.acreage} m²
                   </p>
                   <p>
-                    <span className="font-bold">Kiểu:</span> {item.type}
+                    <span className="font-bold">Kiểu:</span>{' '}
+                    {item.type === 'nhadat' ? 'Nhà đất' : item.type === 'chungcu' ? 'Chung cư' : item.type}
                   </p>
                 </div>
               </Button>

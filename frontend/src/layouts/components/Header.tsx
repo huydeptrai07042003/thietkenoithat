@@ -26,8 +26,8 @@ const menu: MENU[] = [
     path: '/products',
   },
   {
-    name: 'BLOG',
-    path: '/#',
+    name: 'FEEDBACKS',
+    path: '/feedbacks',
   },
 ];
 

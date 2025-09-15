@@ -85,13 +85,21 @@ const SingleProject: React.FC = () => {
           />
           <div className="space-y-4">
             <p>
-              <span className="font-bold">Địa điểm:</span> {project.place}
+              <span className="font-bold">Địa điểm:</span>{' '}
+              {project.place === 'hochiminh'
+                ? 'Hồ Chí Minh'
+                : project.place === 'hanoi'
+                ? 'Hà Nội'
+                : project.place === 'phutho'
+                ? 'Phú Thọ'
+                : project.place}
             </p>
             <p>
               <span className="font-bold">Diện tích:</span> {project.acreage} m²
             </p>
             <p>
-              <span className="font-bold">Kiểu:</span> {project.type}
+              <span className="font-bold">Kiểu:</span>{' '}
+              {project.type === 'nhadat' ? 'Nhà đất' : project.type === 'chungcu' ? 'Chung cư' : project.type}
             </p>
             <p>
               <span className="font-bold">Trạng thái:</span> {project.status}
@@ -129,7 +137,7 @@ const SingleProject: React.FC = () => {
           className="fixed inset-0 bg-black/70 bg-opacity-80 flex items-center justify-center z-50"
           onClick={() => setIsOpen(false)}
         >
-          <img src={selectedImage} alt="" className="mt-15 max-h-[85%] max-w-[90%]"/>
+          <img src={selectedImage} alt="" className="mt-15 max-h-[85%] max-w-[90%]" />
         </div>
       )}
     </div>

@@ -6,7 +6,7 @@ interface IMG {
 }
 
 export interface Item {
-  _id: string; 
+  _id: string;
   images: IMG[];
   place: string;
   acreage: number;
@@ -30,13 +30,21 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ item }) => {
         <div className="absolute bottom-[-100%] left w-full h-full bg-black/70 transition-all duration-300 group-hover:bottom-0"></div>
         <div className="absolute top-[40%] text-xl left-[-100%] text-white w-full opacity-0 h-full transition-all duration-500 group-hover:left-0 group-hover:opacity-100">
           <p>
-            <span className="font-bold">Địa điểm:</span> {item.place}
+            <span className="font-bold">Địa điểm:</span>{' '}
+            {item.place === 'hochiminh'
+              ? 'Hồ Chí Minh'
+              : item.place === 'hanoi'
+              ? 'Hà Nội'
+              : item.place === 'phutho'
+              ? 'Phú Thọ'
+              : item.place}
           </p>
           <p>
             <span className="font-bold">Diện tích:</span> {item.acreage} m2
           </p>
           <p>
-            <span className="font-bold">Kiểu:</span> {item.type}
+            <span className="font-bold">Kiểu:</span>{' '}
+            {item.type === 'nhadat' ? 'Nhà đất' : item.type === 'chungcu' ? 'Chung cư' : item.type}
           </p>
         </div>
       </div>

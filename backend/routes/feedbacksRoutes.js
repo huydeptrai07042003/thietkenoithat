@@ -5,7 +5,7 @@ const User = require("../models/User");
 const router = require("express").Router();
 
 // route UPDATE /api/feedbacks/:id
-router.put("/:id", async (req, res) => {
+router.put("/:id", protect, admin, async (req, res) => {
   try {
     const id = req.params.id;
     const updatedStatusFeedbacks = await Feedbacks.findByIdAndUpdate(

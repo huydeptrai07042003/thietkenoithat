@@ -20,10 +20,10 @@ const User: React.FC = () => {
         </h1>
         {/* Nút Users */}
         <Button
-          to="/admin/users"
+          to="/feedbacks"
           className="px-8 py-4 text-lg font-semibold rounded-2xl bg-blue-500 text-white shadow-lg hover:bg-blue-600 hover:scale-105 transform transition duration-300 ease-in-out"
         >
-          Go to Blog
+          Go to Feedbacks
         </Button>
 
         {/* Nút Products */}

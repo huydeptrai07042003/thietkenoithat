@@ -6,6 +6,8 @@ export { default as SignUp } from './SignUp'
 export { default as SingleProject } from './SingleProject'
 export { default as Admin } from './Admin'
 export { default as User } from './User'
+export { default as Feedbacks } from './Feedbacks'
+
 
 
 
