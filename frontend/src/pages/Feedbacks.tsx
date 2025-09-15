@@ -5,8 +5,8 @@ import ContainerFeedBack from '../layouts/components/Feedbacks/ContainerFeedBack
 const Feedbacks: React.FC = () => {
   return (
     <>
-      <HeaderFeedback/>
-      <ContainerFeedBack/>
+      <HeaderFeedback />
+      <ContainerFeedBack />
     </>
   );
 };

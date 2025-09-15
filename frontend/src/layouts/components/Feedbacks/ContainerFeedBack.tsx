@@ -7,6 +7,16 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import { fetchFeedbacks } from '../../../redux/slices/feedbackSlice';
 
 const ContainerFeedBack: React.FC = () => {
+  //Đkien post feedbacks
+  const { user } = useAppSelector((state) => state.auth);
+  const handlePostFeedBack = () => {
+    if (user) {
+      setOpened(true);
+    } else {
+      alert('Bạn cần đăng nhập trước khi up feedbacks!');
+    }
+  };
+  //
   const [isOpened, setOpened] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const { feedbacks, loading, error } = useAppSelector((state) => state.feedbacks);
@@ -17,7 +27,7 @@ const ContainerFeedBack: React.FC = () => {
   return (
     <div className="w-full text-center">
       <Button
-        onClick={() => setOpened(true)}
+        onClick={handlePostFeedBack}
         className="px-6 py-2 bg-blue-500 shadow-md hover:opacity-70 transition-opacity duration-200 text-white rounded-md cursor-pointer my-10"
       >
         Post Your Feedback
