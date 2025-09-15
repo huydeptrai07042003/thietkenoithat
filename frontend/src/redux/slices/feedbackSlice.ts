@@ -5,6 +5,7 @@ const API_URL = `${import.meta.env.VITE_BACKEND_URL}`;
 
 interface feedBacks {
   _id: string;
+  user: string;
   rate: number;
   description: string;
   approved: boolean;
@@ -25,14 +26,14 @@ const initialState: INITIALSTATE = {
 //Thunk to fetch feedBacks
 export const fetchFeedbacks = createAsyncThunk<feedBacks[]>('feedbacks/fetchFeedbacks', async () => {
   const response = await axios.get(`${API_URL}/api/feedbacks`);
-  return response.data.feedbacks;
+  return response.data;
 });
 
 //Thunk to create feedBacks
 export const createFeedbacks = createAsyncThunk<feedBacks, Partial<feedBacks>>(
   'feedbacks/createFeedbacks',
   async (newFeedback) => {
-    const response = await axios.post(`${API_URL}/api/feedbacks`, newFeedback);
+    const response = await axios.post(`${API_URL}/api/feedbacks`,newFeedback);
     return response.data;
   },
 );

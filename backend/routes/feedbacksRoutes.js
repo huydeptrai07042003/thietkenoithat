@@ -1,6 +1,5 @@
 const Feedbacks = require("../models/Feedbacks");
 const { protect, admin } = require("../middleware/authMiddleware");
-const User = require("../models/User");
 
 const router = require("express").Router();
 
@@ -51,8 +50,9 @@ router.get("/", async (req, res) => {
 // route POST /api/feedbacks/
 router.post("/", async (req, res) => {
   try {
-    const { rate, description } = req.body;
+    const { user, rate, description } = req.body;
     const feedback = new Feedbacks({
+      user,
       rate,
       description,
     });

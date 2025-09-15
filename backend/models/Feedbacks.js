@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const feedbackSchema = mongoose.Schema({
+  user: {
+    type: String,
+    required: true,
+  },
   rate: {
     type: Number,
     required: true,
