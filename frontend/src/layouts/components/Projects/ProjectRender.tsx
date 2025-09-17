@@ -31,7 +31,7 @@ const ProjectRender: React.FC = () => {
             <div key={item._id} className="flex flex-col text-center items-center flex-1">
               <Button to={`/products/${item._id}`} className="w-full group relative overflow-hidden cursor-pointer">
                 <img
-                  className="w-full h-80 object-cover rounded-lg shadow-md hover:opacity-50 transition-opacity duration-300"
+                  className="w-full h-60 md:h-80 object-cover rounded-lg shadow-md hover:opacity-50 transition-opacity duration-300"
                   src={item.images[0]?.url}
                   alt={item.images[0]?.altText || `Project ${rowIndex + 1}-${item._id + 1}`}
                 />
@@ -60,7 +60,7 @@ const ProjectRender: React.FC = () => {
                 </div>
               </Button>
               {/* Tên dự án */}
-              <p className="mt-3 text-lg font-semibold text-white uppercase">{item.name}</p>
+              <p className="mt-3 md:text-lg font-semibold text-white uppercase">{item.name}</p>
             </div>
           ))}
         </div>

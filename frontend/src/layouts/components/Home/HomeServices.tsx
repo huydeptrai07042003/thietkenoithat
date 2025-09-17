@@ -42,11 +42,11 @@ const HomeServices: React.FC = () => {
     setIsShow((prevIndex) => (prevIndex === index ? -1 : index));
   };
   return (
-    <div className="py-10 w-full">
-      <h1 className="text-5xl font-bold py-10 text-center text-white">
+    <div className="mb-10 w-full">
+      <h1 className=" text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-center py-10 md:py-20 text-white">
         Tại sao lại chọn <span className="animate-pulse">Kiến Group</span>
       </h1>
-      <div className="bgBlue text-white rounded-2xl w-[80%] flex flex-col justify-around text-center mx-auto px-4 py-2 text-2xl shadow-2xl hover:shadow-blue-950 transition-shadow duration-300">
+      <div className="bgBlue text-white rounded-2xl w-[80%] flex flex-col justify-around text-center mx-auto px-10 py-2 text-lg sm:text-xl md:text-2xl shadow-2xl hover:shadow-blue-950 transition-shadow duration-300">
         {advantage.map((ad, index) => {
           return (
             <Button
@@ -54,7 +54,7 @@ const HomeServices: React.FC = () => {
               key={index}
               className="py-2 cursor-pointer transition-colors duration-300 hover:text-red-300"
             >
-              <div className={clsx('my-10', isShow === index ? 'border-b-2 text-red-300 ' : '')}>{ad.name}</div>
+              <div className={clsx('my-5 md:my-10', isShow === index ? 'border-b-2 text-red-300 ' : '')}>{ad.name}</div>
               <AnimatePresence>
                 {isShow === index && (
                   <motion.div
@@ -67,7 +67,7 @@ const HomeServices: React.FC = () => {
                       return (
                         <motion.p
                           key={id}
-                          className="text-lg text-blue-100 text-start py-5 bg-blue-950/50 rounded-md px-10"
+                          className="md:text-lg text-blue-100 text-start py-2 md:py-5 bg-blue-950/50 rounded-md px-5 md:px-10"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: id * 0.1 }}

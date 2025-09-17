@@ -68,9 +68,9 @@ const ProjectSearch: React.FC = () => {
   }, [name]);
 
   return (
-    <div className="bgBlue my-10 py-5 text-white text-xl ">
-      <div className="flex flex-col gap-5 lg:gap-0 items-center lg:flex-row xl:w-[70%] justify-around">
-        <label className="text-2xl font-bold">SEARCHBAR</label>
+    <div className="bgBlue my-10 py-2 md:py-5 text-white text-md">
+      <div className="flex flex-col gap-2 md:gap-5 lg:gap-0 items-center lg:flex-row xl:w-[70%] justify-around">
+        <label className="text-xl md:text-2xl font-bold">SEARCHBAR</label>
         <Tippy
           render={(attrs) => (
             <div
@@ -97,7 +97,7 @@ const ProjectSearch: React.FC = () => {
           onClickOutside={onHideResult}
         >
           <div className="xl:ms-12 text-center">
-            <div className=" rounded-2xl relative">
+            <div className=" md:rounded-2xl relative">
               <input
                 className="px-10 py-2 border-0 rounded-2xl text-black overflow-hidden bg-white h-full items-center"
                 ref={inputRef}
@@ -125,7 +125,7 @@ const ProjectSearch: React.FC = () => {
           <select
             name="place"
             id="place"
-            className=" p-2 rounded-xl border border-gray-600 bg-gray-800 text-white italic text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-400 transition-all duration-300"
+            className=" p-2 rounded-xl border md:text-lg border-gray-600 bg-gray-800 text-white italic focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-400 transition-all duration-300"
             onChange={(e) => setPlace(e.target.value)}
           >
             <option value="all" hidden>
@@ -143,7 +143,7 @@ const ProjectSearch: React.FC = () => {
           <select
             name="conditional"
             id="conditional"
-            className=" p-2 rounded-xl border border-gray-600 bg-gray-800 text-white italic text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-400 transition-all duration-300 w-32"
+            className=" p-2 rounded-xl border border-gray-600 bg-gray-800 text-white italic md:text-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-400 transition-all duration-300 w-32"
             onChange={(e) => setType(e.target.value)}
           >
             {/* <option value="">Hiện trạng</option>

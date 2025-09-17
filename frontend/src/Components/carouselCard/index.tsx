@@ -21,14 +21,14 @@ interface CardCarouselProps {
 const CardCarousel: React.FC<CardCarouselProps> = ({ item }) => {
   return (
     <div className="rounded-t-4xl rounded-b-xl shadow-2xl">
-      <div className="w-[300px] h-[400px] object-cover mx-auto rounded-4xl overflow-hidden relative">
+      <div className=" w-[250px] md:w-[300px] h-[300px] md:h-[400px] mx-auto rounded-4xl overflow-hidden relative">
         <img
-          className="w-full h-[100%] group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
           src={item.images[0].url}
           alt={item.images[0].altText}
         />
         <div className="absolute bottom-[-100%] left w-full h-full bg-black/70 transition-all duration-300 group-hover:bottom-0"></div>
-        <div className="absolute top-[40%] text-xl left-[-100%] text-white w-full opacity-0 h-full transition-all duration-500 group-hover:left-0 group-hover:opacity-100">
+        <div className="absolute top-[40%] md:text-xl left-[-100%] text-white w-full opacity-0 h-full transition-all duration-500 group-hover:left-0 group-hover:opacity-100">
           <p>
             <span className="font-bold">Địa điểm:</span>{' '}
             {item.place === 'hochiminh'
@@ -48,7 +48,7 @@ const CardCarousel: React.FC<CardCarouselProps> = ({ item }) => {
           </p>
         </div>
       </div>
-      <p className="text-md uppercase pb-2 py-2 text-center items-center text-white">{item.name}</p>
+      <p className="text-sm md:text-md uppercase pb-2 py-2 md:py-5 text-center items-center text-white">{item.name}</p>
     </div>
   );
 };

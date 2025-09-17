@@ -53,9 +53,9 @@ const DialogFeedback: React.FC<Props> = (props) => {
             <FaRegWindowClose />
           </Button>
           {/* Content */}
-          <h1 className="font-semibold text-3xl border-b-2 pb-2">Feedbacks Form</h1>
+          <h1 className="font-semibold text-2xl md:text-3xl border-b-2 pb-2">Feedbacks Form</h1>
           <form onSubmit={(e) => handleSubmit(e)}>
-            <div className="mt-10">
+            <div className="mt-5 md:mt-10">
               <div>
                 <label className="text-lg">Rate: </label>
                 <div className="flex w-full my-4 justify-around text-center items-center">
@@ -72,7 +72,7 @@ const DialogFeedback: React.FC<Props> = (props) => {
                             rating: Number(e.target.value),
                           })
                         }
-                        className="w-5 h-5 cursor-pointer accent-yellow-500"
+                        className="h-3 md:w-5 w-3 md:h-5 cursor-pointer accent-yellow-500"
                       />
                       <div>
                         {star} star{star > 1 ? 's' : ''}

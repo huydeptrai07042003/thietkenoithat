@@ -28,7 +28,7 @@ const ContainerFeedBack: React.FC = () => {
     <div className="w-full text-center">
       <Button
         onClick={handlePostFeedBack}
-        className="px-6 py-2 bg-blue-500 shadow-md hover:opacity-70 transition-opacity duration-200 text-white rounded-md cursor-pointer my-10"
+        className="px-6 py-2 bg-blue-500 shadow-md hover:opacity-70 transition-opacity duration-200 text-white rounded-md cursor-pointer my-5 md:my-10"
       >
         Post Your Feedback
       </Button>

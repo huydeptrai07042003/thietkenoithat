@@ -26,9 +26,8 @@ const HomeCarousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="py-10">
-      <h1 className="text-5xl font-bold py-20 w-fit mx-auto text-white">Các dự án nổi bật</h1>
-      <p></p>
+    <div>
+      <h1 className="text-3xl md:text-5xl font-bold py-10 md:py-20 w-fit mx-auto text-white">Các dự án nổi bật</h1>
       <Swiper
         modules={[Autoplay]}
         breakpoints={{
@@ -51,7 +50,7 @@ const HomeCarousel: React.FC = () => {
             <SwiperSlide key={item._id}>
               <Button
                 to={`/products/${item._id}`}
-                className="group cursor-pointer text-center block w-fit p-0 rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center"
+                className="mx-auto group cursor-pointer text-center block w-fit p-0 rounded-t-4xl border-transparent hover:border-orange-100 rounded-2xl border-2 transition-colors duration-300 items-center"
               >
                 <CardCarousel item={item} />
               </Button>
